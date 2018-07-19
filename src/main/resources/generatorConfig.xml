@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <context id="context1">
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释，true：是，false:否，注释较为繁琐，建议去除 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--JDBC配置-->
+        <jdbcConnection connectionURL="jdbc:mysql://118.89.22.131/tools" driverClass="com.mysql.jdbc.Driver" password="tools"
+                        userId="tools"/>
+        <!--生成实体位置-->
+        <javaModelGenerator targetPackage="com.hx.toolbox.entity" targetProject="src/main/java"/>
+        <!-- <sqlMapGenerator targetPackage="test.xml" targetProject="myzhxy" />
+        <javaClientGenerator targetPackage="test.dao" targetProject="myzhxy" type="XMLMAPPER" /> -->
+        <!-- <table  tableName="admin" domainObjectName="Admin"/> -->
+
+        <!--	<table tableName="%">
+                <columnOverride column="status" javaType="int" />
+                <columnOverride column="pid" javaType="int" />
+                <columnOverride column="priority" javaType="int" />
+                <columnOverride column="uid" javaType="int" />
+                <columnOverride column="topicId" javaType="int" />
+                <columnOverride column="toCid" javaType="int" />
+                <columnOverride column="categoryId" javaType="int" />
+            </table>-->
+
+        <!--	<table tableName="rating">
+                <columnOverride  column="score" javaType="int" />
+            </table>-->
+        <table tableName="%">
+            <!--            <columnOverride column="role_id" javaType="int" />
+                        <columnOverride column="status" javaType="int" />
+                        <columnOverride column="rid" javaType="int" />
+                        <columnOverride column="interview_state" javaType="int" />-->
+
+        </table>
+
+
+
+    </context>
+</generatorConfiguration>
+
+
+        <!-- a) 建表时，字段名称建议用"_"分隔多个单词，比如:AWB_NO、REC_ID...，这样生成的entity，属性名称就会变成漂亮的驼峰命名，即：awbNo、recId
+
+        b)oracle中，数值形的字段，如果指定精度，比如Number(12,2)，默认生成entity属性是BigDecimal型 ，如果不指定精度，比如:Number(9)，指默认生成的是Long型
+
+        c)oracle中的nvarchar/nvarchar2，mybatis-generator会识别成Object型，建议不要用nvarchar2，改用varchar2 -->
